@@ -44,6 +44,11 @@ android {
                     // to take a screenshot
                     systemImageSource = "aosp-atd"
                 }
+                pixel2api30 (com.android.build.api.dsl.ManagedVirtualDevice) {
+                    device = "Pixel 2"
+                    apiLevel = 30
+                    systemImageSource = "aosp-atd"
+                }
             }
         }
     }
