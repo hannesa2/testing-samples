@@ -24,4 +24,4 @@ jobs:
           java-version: 11
       - uses: malinskiy/action-android/install-sdk@release/0.1.4
       - run: sdkmanager platform-tools
-      - run: ./gradlew assembleDebug nexusOneApi30DebugAndroidTest
+      - run: ./gradlew assembleDebug nexusOneApi28DebugAndroidTest
