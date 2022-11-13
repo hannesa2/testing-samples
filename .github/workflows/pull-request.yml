@@ -22,6 +22,6 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: 11
-      - uses: malinskiy/action-android/install-sdk@release/0.1.4
+      - uses: android-actions/setup-android@v2.0.10
       - run: sdkmanager platform-tools
       - run: ./gradlew assembleDebug nexusOneApi30DebugAndroidTest
