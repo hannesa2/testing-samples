@@ -24,4 +24,12 @@ jobs:
           java-version: 11
       - uses: malinskiy/action-android/install-sdk@release/0.1.4
       - run: sdkmanager platform-tools
-      - run: ./gradlew assembleDebug nexusOneApi30DebugAndroidTest
+      - run: ./gradlew assembleDebug
+      - name: Run instrumentation tests
+        uses: malinskiy/action-android/emulator-run-cmd@release/0.1.4
+        with:
+          cmd: cd ui/espresso/ScreenshotSample & ./gradlew cAT --continue
+          api: 28
+          tag: 'default'
+          abi: x86_64
+          cmdOptions: -noaudio -no-boot-anim -no-window
