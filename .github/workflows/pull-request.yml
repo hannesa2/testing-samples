@@ -9,7 +9,7 @@ on:
 jobs:
   Build:
     name: Build
-    runs-on: macOS-latest
+    runs-on: ubuntu-latest
     defaults:
       run:
         shell: bash
@@ -22,6 +22,6 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: 11
-      - uses: malinskiy/action-android/install-sdk@release/0.1.4
-      - run: sdkmanager platform-tools
+      - run: bash -c "yes || true" | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses
+      - run: $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --update
       - run: ./gradlew assembleDebug nexusOneApi30DebugAndroidTest
