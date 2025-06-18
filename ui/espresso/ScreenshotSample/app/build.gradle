@@ -34,10 +34,10 @@ android {
     testOptions {
         managedDevices {
             devices {
-                // run with ../gradlew  nexusOneApi30DebugAndroidTest
-                nexusOneApi30(com.android.build.api.dsl.ManagedVirtualDevice) {
+                // run with ../gradlew  pixel6Api30DebugAndroidTest
+                pixel6Api30(com.android.build.api.dsl.ManagedVirtualDevice) {
                     // A lower resolution device is used here for better emulator performance
-                    device = "Nexus One"
+                    device = "Pixel 6"
                     apiLevel = 30
                     // Also use the AOSP ATD image for better emulator performance
                     // The androidx.test screenshot APIs will automatically enable hardware rendering
